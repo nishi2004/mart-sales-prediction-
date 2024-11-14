@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Main Page</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1 class="hadding mainhadding">Bigmart Sales Prediction</h1>
+
+        <form id="predictForm">
+            <label for="Item_Weight">Item_Weight:</label>
+            <input type="number" id="Item_Weight" name="Item_Weight"><br><br>
+
+            <label for="Item_Visibility">Item_Visibility:</label>
+            <input type="number" id="Item_Visibility" name="Item_Visibility"><br><br>
+            
+            <label for="Item_MRP">Item_MRP:</label>
+            <input type="number" id="Item_MRP" name="Item_MRP"><br><br>
+            
+            <label for="Outlet_Establishment_Year">Outlet_Establishment_Year:</label>
+            <input type="number" id="Outlet_Establishment_Year" name="Outlet_Establishment_Year"><br><br>
+
+            <button type="button" class="button" onclick="makePrediction()">Predict</button>
+        </form>
+        <div class="output-field">
+            <p id="result">Not predict anything.</p>
+        </div>
+        
+    </div>
+
+    <script>
+        function makePrediction() {
+            const formData = {
+                Item_Weight: document.getElementById('Item_Weight').value,
+                Item_Visibility: document.getElementById('Item_Visibility').value,
+                Item_MRP: document.getElementById('Item_MRP').value,
+                Outlet_Establishment_Year: document.getElementById('Outlet_Establishment_Year').value
+            };
+
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = 'Item_Outlet_Sales: ' + data.predictions[0].toFixed(2);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+
+</html>
