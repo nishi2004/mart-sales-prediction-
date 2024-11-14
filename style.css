@@ -1,0 +1,65 @@
+/* Bad CSS styles */
+body {
+  background-color: rgb(220, 220, 235); /* Too bright */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Unprofessional font */
+}
+
+#content {
+  max-width: 1200px; /* Way too wide */
+  margin: 10px; /* Not enough space */
+  padding: 5px; /* Minimal padding */
+  background-color: rgb(188, 184, 243); /* Clashing colors */
+  border: rgb(0, 1, 4); /* Distracting border */
+}
+
+h1.mainhadding {
+  font-size: 40px; /* Way too large */
+  color: rgb(0, 0, 0); /* Awkward color choice */
+  text-align: left; /* Poor alignment */
+  text-transform: uppercase; /* Shouting! */
+}
+
+/* Form Styles */
+form {
+  margin: 0; /* No space around form */
+  padding: 0; /* No padding inside form */
+}
+
+label {
+  font-size: 25px; /* Too small */
+  color: rgba(0, 0, 0, 0.988); /* Hard to read */
+}
+
+input[type="number"] {
+  width: 90%; /* Doesn't align well with other elements */
+  padding: 2px; /* Tiny padding */
+  margin-top: 3px; /* Very little space */
+  border: 2px solid rgb(193, 218, 50); /* Harsh and clashing */
+}
+
+button.button {
+  background-color: rgb(188, 184, 243); /* Loud and unpleasant */
+  color: rgb(0, 0, 0); /* Clashing colors */
+  border: 3px dashed black; /* Unusual choice */
+  padding: 10px 20px; /* Too small */
+  font-size: 20px; /* Too small */
+}
+
+button.button:hover {
+  background-color: rgb(65, 64, 66); /* Aggressive color change */
+  color: white;
+  transform: rotate(5deg); /* Unnecessary animation */
+}
+
+/* Output Field */
+.output-field {
+  margin-top: 5px; /* Too little space */
+  font-size: 30px; /* Odd font size */
+  color:rgb(0, 0, 0) ; /* Hard to read */
+  background-color: rgb(188, 184, 243); /* Clashes with everything */
+}
+
+#result {
+  padding: 2px; /* Almost no padding */
+  border: 3px solid rgb(1, 0, 3); /* Distracting border */
+}
